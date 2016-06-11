@@ -1,0 +1,25 @@
+{
+  "name": "node-url-converter",
+  "version": "0.0.1",
+  "description": "Converts url string into object and vice versa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikhailrojo/node-url-converter.git"
+  },
+  "keywords": [
+    "url",
+    "parser",
+    "url",
+    "converter"
+  ],
+  "author": "Stepanov Mikhail",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikhailrojo/node-url-converter/issues"
+  },
+  "homepage": "https://github.com/mikhailrojo/node-url-converter#readme"
+}
