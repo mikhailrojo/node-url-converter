@@ -5,7 +5,7 @@ This module essentially takes one argument and converts it.
 * if this argument is an object - it converts it into a url-string
 
 Apparently it is just a wrapper for node native module 'url'.
-* index.js is a module written in ES05
+* index.js is a module in ES05 (converted using Babel from ES06)
 * es5.js is a module written in ES06
 
 
