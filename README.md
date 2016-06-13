@@ -1,14 +1,12 @@
-Тестовое задание.
-Написать node.js-модуль, экспортирующий методы для работы с урлами:
-- парсинг урла из строки в объект (urlpath, объект с query-параметрами и другие сущности, которые можно выделить из урла);
-- сериализация урла в строку по объекту с сущностями урла.
+## Node url parser ##
 
-Исходники модуля должны быть написаны в синтаксисе ES2015 (в т.ч. используя модульную систему ES2015), но предоставлять он должен код в ES5.
-Для сборки исходников в dist (предоставляемый модулем код) использовать babeljs (http://babeljs.io/).
+This module essentially takes one argument and converts it.
+* if this arguments is a string - it converts it into an object
+* if this argument is an object - it converts it into a url-string
 
-1. Модуль написан
-2. Экспортирующие методы присутствуют
-3. Модуль написан на ES5 и ES6
+Apparently it is just a wrapper for node native module 'url'.
+index.js is a module written in ES05
+es5.js is a module written in ES06
 
 
 ### How to use ###
