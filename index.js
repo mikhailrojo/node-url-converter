@@ -1,8 +1,31 @@
 'use strict';
 
 var urlModule = require('url');
-function parse(arg) {
-  if (Object.prototype.toString.call(arg).slice(8, -1) === 'String') return urlModule.parse(arg);
-  if (Object.prototype.toString.call(arg).slice(8, -1) === 'Object') return urlModule.format(arg);else return new Error('This is neither object or string');
+urlModule.oldParse = urlModule.parse;
+
+urlModule.parse = function(url){
+  var mi = urlModule.oldParse(url);
+  mi.serialize = function(){
+    return urlModule.format(this);
+  };
+  mi.removeHash = function(){
+    this.hash = '';
+    return this;
+  };
+  return mi;
 }
-module.exports = parse;
+
+
+module.exports = urlModule;
+
+
+
+
+// require('node-url-converter').parse('....').addParam(...).serialize()
+//
+// var a = www.misha.ru/#tima
+// parse(a);
+// объект парсинга + с дополнительными методами.
+// {hash: '#tima', removeHash: function}
+// parse(a).removeHash()
+// должен возвращаться объект {hash: ''}
