@@ -15,4 +15,5 @@ To Run the tests with mocha: "npm test"
 var converter = require('node-url-converter');
 var testString = "http://user:pass@host.com:8080/p/a/t/h?query=string#hash";
 
-converter.parse(testString).removeHash().addHash('yandex').addQuery({'job': 'given'}). serialize();// http://user:pass@host.com:8080/p/a/t/h?query=string&job=given#yandex
+converter.parse(testString).removeHash().addHash('yandex').addQuery({'job': 'given'}). serialize();
+// http://user:pass@host.com:8080/p/a/t/h?query=string&job=given#yandex
