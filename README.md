@@ -1,35 +1,20 @@
 ## Node url parser ##
 
-This module essentially takes one argument and converts it.
-* if this arguments is a string - it converts it into an object
-* if this argument is an object - it converts it into a url-string
+This module has the following methods:
+* parse() a string converting into an object
+* serialize() an object converting into a string
+* addHash() adds a hash
+* removeHash() removes it
+* addQuery() takes an object as argument and convert it into a string
+* removerQuery() removes the query
 
-Apparently it is just a wrapper for node native module 'url'.
-* index.js is a module in ES05 (converted using Babel from ES06)
-* es5.js is a module written in ES06
-
+To Run the tests with mocha
+```javascript
+npm test
 
 ### How to use ###
 ```javascript
 var converter = require('node-url-converter');
-var object = {
-  protocol : 'http',
-  hostname : 'www.yandex.ru',
-  port: 3000,
-  pathname: '/blog',
-  hash: 'top'
-}
-converter(object); // converts to http://www.yandex.ru:3000/blog#top
-converter('http://yandex.ru/misha?query')
-// converts to {protocol: 'http:',
-//   slashes: true,
-//   auth: null,
-//   host: 'yandex.ru',
-//   port: null,
-//   hostname: 'yandex.ru',
-//   hash: null,
-//   search: '?query',
-//   query: 'query',
-//   pathname: '/misha',
-//   path: '/misha?query',
-//   href: 'http://yandex.ru/misha?query' }
+var testString = "http://user:pass@host.com:8080/p/a/t/h?query=string#hash";
+
+converter.parse(testString).removeHash().addHash('yandex').addQuery({'job': 'given'}). serialize();// http://user:pass@host.com:8080/p/a/t/h?query=string&job=given#yandex

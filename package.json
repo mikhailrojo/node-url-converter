@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/mikhailrojo/node-url-converter/issues"
   },
-  "homepage": "https://github.com/mikhailrojo/node-url-converter#readme"
+  "homepage": "https://github.com/mikhailrojo/node-url-converter#readme",
+  "devDependencies": {
+    "mocha": "^2.5.3"
+  }
 }
