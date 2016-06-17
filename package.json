@@ -2,9 +2,11 @@
   "name": "node-url-converter",
   "version": "0.0.1",
   "description": "Converts url string into object and vice versa",
-  "main": "index.js",
+  "main": "index5.js",
   "scripts": {
-    "test": "mocha tests.js"
+    "start": "node index.js",
+    "test" : "mocha tests.js",
+    "prepublish": "babel source.js -o index5.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,8 @@
   "homepage": "https://github.com/mikhailrojo/node-url-converter#readme",
   "devDependencies": {
     "mocha": "^2.5.3"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.9.0"
   }
 }
