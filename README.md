@@ -8,9 +8,7 @@ This module has the following methods:
 * addQuery() takes an object as argument and convert it into a string
 * removerQuery() removes the query
 
-To Run the tests with mocha
-```javascript
-npm test
+To Run the tests with mocha: "npm test"
 
 ### How to use ###
 ```javascript
