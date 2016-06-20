@@ -1,5 +1,5 @@
 var assert = require('assert');
-var module = require('./index.js');
+var module = require('./index.js').default;
 
 var testString = "http://user:pass@host.com:8080/p/a/t/h?query=string#hash";
 
@@ -42,13 +42,13 @@ describe("Module methods indeed do work", function(){
     assert(testObj.removeQuery().serialize() === 'http://user:pass@host.com:8080/p/a/t/h');
   });
   it("we can add Query as an object", function(){
-    assert(testObj.removeQuery().addQuery({a: 'tima'}).serialize() === 'http://user:pass@host.com:8080/p/a/t/h?a=tima');
+
+assert(testObj.removeQuery().addQuery({a: 'tima'}).serialize() === 'http://user:pass@host.com:8080/p/a/t/h?a=tima');
   });
   it("the Query can have more then 1 property", function(){
     assert(testObj.removeQuery().addQuery({a: 'tima', b: true}).serialize() === 'http://user:pass@host.com:8080/p/a/t/h?a=tima&b=true');
   });
   it("we can remove one hash and add another in a chain and get a proper string", function(){
-  //  console.log(testObj.removeHash().addHash('yandex').serialize());
     assert(testObj.removeHash().addHash('yandex').serialize() === 'http://user:pass@host.com:8080/p/a/t/h?a=tima&b=true#yandex');
   });
 });
